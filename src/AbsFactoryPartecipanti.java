@@ -2,8 +2,8 @@
 public interface AbsFactoryPartecipanti {
 
 	
-	public void creaPartecipanteRandom();
-	public void creaPartecipante();
+	public Partecipante creaPartecipanteRandom();
+	public Partecipante creaPartecipante(String squadra,String cognome,String nome,int età);
 	
 
 }

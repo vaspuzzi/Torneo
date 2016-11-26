@@ -6,16 +6,43 @@ public class Partecipante {
 	private int età;
 
 
-	public Partecipante(String squadra, String nome, String cognome, int età) {
-		this.squadra=squadra;
-		this.nome=nome;
-		this.cognome=cognome;
-		this.età=età;
+	public String getSquadra() {
+		return squadra;
 	}
-	
-	
-	public Partecipante() {
-		
+
+
+	public void setSquadra(String squadra) {
+		this.squadra = squadra;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getCognome() {
+		return cognome;
+	}
+
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+
+	public int getEtà() {
+		return età;
+	}
+
+
+	public void setEtà(int età) {
+		this.età = età;
 	}
 
 }
