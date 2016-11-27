@@ -6,8 +6,17 @@ public class Partecipante {
 	private int punteggio;
 	
 	
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return " NOME: " + nome + " COGNOME: " + cognome + " SQUADRA: " + squadra + "\n";
+	}
 
-
+	//getters e setters
+	
 	public String getSquadra() {
 		return squadra;
 	}

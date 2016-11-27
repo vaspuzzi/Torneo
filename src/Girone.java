@@ -1,10 +1,11 @@
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Girone {
 	
 	private int dimensioneGirone;
 	
-	private Partecipante[] partecipantiGirone = new Partecipante[dimensioneGirone];
+	List<Partecipante> partecipantiGirone = new ArrayList<Partecipante>();
 	
 	
 	
@@ -14,9 +15,8 @@ public class Girone {
 		
 	}
 	void aggiungiPartecipante(Partecipante p){
-		for(int i=0;i<dimensioneGirone;++i)
-		if(partecipantiGirone[i] != null)
-			partecipantiGirone[i] = p;
+		if(partecipantiGirone.size() < dimensioneGirone)
+			partecipantiGirone.add(p);
 		
 	}
 	

@@ -1,19 +1,17 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Torneo {
 	
 	private int numGironi;
-	private Girone[] arrayGironi = new Girone[numGironi];
+	List<Girone> arrayGironi = new ArrayList<Girone>();
 	private String disciplina;
 	private String nomeTorneo;
 	private int partecpantiPerGirone;
 	
 	public Torneo(int numGironi, int partecipantiPerGirone) {
-		for(int i=0;i<numGironi;++i) {
-			arrayGironi[i]=new Girone(partecipantiPerGirone);
-			System.out.println();
-		}
-		
+		while(arrayGironi.size() < numGironi)
+			arrayGironi.add(new Girone(partecipantiPerGirone));
 	}
 	
 	
