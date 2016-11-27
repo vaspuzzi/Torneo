@@ -3,7 +3,9 @@ public class Partecipante {
 	private String squadra;
 	private String nome;
 	private String cognome;
-	private int età;
+	private int punteggio;
+	
+	
 
 
 	public String getSquadra() {
@@ -36,13 +38,14 @@ public class Partecipante {
 	}
 
 
-	public int getEtà() {
-		return età;
+
+	public int getPunteggio() {
+		return punteggio;
 	}
 
 
-	public void setEtà(int età) {
-		this.età = età;
+	public void setPunteggio(int punteggio) {
+		this.punteggio = punteggio;
 	}
 
 }

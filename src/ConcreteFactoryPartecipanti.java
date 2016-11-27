@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -31,19 +32,23 @@ public class ConcreteFactoryPartecipanti implements AbsFactoryPartecipanti {
 		
 		p.setCognome(surname);
 		p.setNome(name);
-		p.setEtà(15+random.nextInt(30));
+
 		p.setSquadra(squadra[random.nextInt(5)]);
 		
 		return p;
 	}
 
 	@Override
-	public Partecipante creaPartecipante(String squadra, String cognome, String nome, int età) {
+	public Partecipante creaPartecipante() {
 		Partecipante p = new Partecipante();
-		p.setSquadra(squadra);
-		p.setNome(nome);
-		p.setEtà(età);
-		p.setCognome(cognome);
+		Scanner in = new Scanner(System.in);
+		System.out.print("Nome: ");
+		p.setNome(in.nextLine());
+		System.out.print("\nCognome: ");
+		p.setCognome(in.nextLine());
+		System.out.print("\nSquadra: ");
+		p.setSquadra(in.nextLine());
+		
 		return p;
 	}
 	
