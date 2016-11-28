@@ -43,6 +43,9 @@ public class Torneo {
 		this.partecpantiPerGirone = partecpantiPerGirone;
 	}
 	
+	public List<Girone> getArrayGironi () {
+		return arrayGironi;
+	}
 
 	
 }
