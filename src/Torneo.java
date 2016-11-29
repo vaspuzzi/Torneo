@@ -9,12 +9,21 @@ public class Torneo {
 	private String nomeTorneo;
 	private int partecpantiPerGirone;
 	
-	public Torneo(int numGironi, int partecipantiPerGirone) {
+	public Torneo(int numGironi, int partecipantiPerGirone, String nomeTorneo, String nomeDisciplina) {
 		while(arrayGironi.size() < numGironi)
-			arrayGironi.add(new Girone(partecipantiPerGirone));
+			arrayGironi.add(new Girone(partecipantiPerGirone,arrayGironi.size()+1));
+		this.numGironi = numGironi;
+		this.partecpantiPerGirone = partecipantiPerGirone;
+		this.nomeTorneo = nomeTorneo;
+		this.disciplina = nomeDisciplina;
 	}
 	
-	
+	public String toString() {
+		String s = new String("TORNEO: "+ nomeTorneo + "\n DISCIPLINA: "+disciplina+"\n");
+		for(Girone g : arrayGironi)
+			s += g;
+		return s;
+	}
 	
 	
 	//getters e setters

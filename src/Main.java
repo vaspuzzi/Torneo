@@ -22,10 +22,25 @@ public class Main {
 		System.out.print("Inserisci il numero di partecipanti: ");
 		numPartecipanti = in.nextInt();
 		
+		in.nextLine();
+		
 		System.out.print("Inserisci il numero di gironi: ");
 		numGironi = in.nextInt();
 		
-		Torneo t = new Torneo(numGironi, numPartecipanti/numGironi);
+		in.nextLine();
+		
+		System.out.print("Inserisci nome torneo: ");
+		String nomeTorneo = in.nextLine();
+		
+		System.out.print("Inserisci nome torneo: ");
+		String nomeDisciplina = in.nextLine();
+		
+		in.close();
+		
+		Torneo t = new Torneo(numGironi, numPartecipanti/numGironi, nomeTorneo,nomeDisciplina);
+		
+		
+		
 		
 		List<Partecipante> tutti = new ArrayList<Partecipante> ();
 		
@@ -37,13 +52,13 @@ public class Main {
 		System.out.println(tutti.toString());
 		
 		
-		// ordino in base al nome della squadra ???????
+		// ordino in base al nome della squadra ??????? prob inutile
 		Collections.sort(tutti, new LexicographicComparator());
 		
 		
 		// creo mappa che raggruppa per squadra
-		Map<String, Queue<Partecipante>> bySquadra
-			= new LinkedHashMap<String,Queue<Partecipante>>();
+		Map<String, List<Partecipante>> bySquadra
+			= new LinkedHashMap<String,List<Partecipante>>();
 		
 		for(Partecipante p: tutti) {
 			List<Partecipante> tmp = new LinkedList<Partecipante>();
@@ -63,29 +78,31 @@ public class Main {
 				
 		}
 		
+		
 		// prendo le squadre in ordine random 
 		List<String> keys = new ArrayList<String>(bySquadra.keySet());
 		Collections.shuffle(keys);
+		
+		// randomizzo i partecipanti di ogni squadra
+		for(String squadra : keys)
+			Collections.shuffle(bySquadra.get(squadra));
+		
+		// inserisco partecipanti nel girone
 		for (String squadra  : keys) {
 			int i=0;
-		    // Access keys/values in a random order
-			while(!bySquadra.isEmpty()) {
-				Partecipante pp = bySquadra.get(squadra).poll();
-				if(i>t.getNumGironi())
-					i=i%t.getNumGironi();
-				// ?? 
-					
-				
+			for(Partecipante p : bySquadra.get(squadra)) {
+				//aggiungo partecipante nel girone i,
+				i%=t.getNumGironi();
+				while(t.getArrayGironi().get(i).isFull())
+					i++;
+				t.getArrayGironi().get(i%t.getNumGironi()).aggiungiPartecipante(p);
+				i++;
 			}
-		}
-		
-		
-		
-		
-		System.out.println(bySquadra);
-				
+		}				
 
-	
+		System.out.println(t);
+		
+		
 	}
 	
 }
