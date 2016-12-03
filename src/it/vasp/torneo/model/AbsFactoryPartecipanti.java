@@ -1,3 +1,4 @@
+package it.vasp.torneo.model;
 
 public interface AbsFactoryPartecipanti {
 

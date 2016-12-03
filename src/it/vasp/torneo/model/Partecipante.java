@@ -1,3 +1,4 @@
+package it.vasp.torneo.model;
 
 public class Partecipante {
 	private String squadra;

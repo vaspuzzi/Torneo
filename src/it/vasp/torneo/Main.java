@@ -1,11 +1,15 @@
+package it.vasp.torneo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
 import java.util.Scanner;
+
+import it.vasp.torneo.model.AbsFactoryPartecipanti;
+import it.vasp.torneo.model.ConcreteFactoryPartecipanti;
+import it.vasp.torneo.model.Partecipante;
 
 public class Main {
 
@@ -19,25 +23,25 @@ public class Main {
 		
 		// l'utente inserisce numero partecipanti e numero gironi
 		int numGironi, numPartecipanti;
-		System.out.print("Inserisci il numero di partecipanti: ");
-		numPartecipanti = in.nextInt();
+//		System.out.print("Inserisci il numero di partecipanti: ");
+//		numPartecipanti = in.nextInt();
 		
-		in.nextLine();
+//		in.nextLine();
 		
-		System.out.print("Inserisci il numero di gironi: ");
-		numGironi = in.nextInt();
+//		System.out.print("Inserisci il numero di gironi: ");
+//		numGironi = in.nextInt();
 		
-		in.nextLine();
+//		in.nextLine();
 		
 		System.out.print("Inserisci nome torneo: ");
 		String nomeTorneo = in.nextLine();
 		
-		System.out.print("Inserisci nome torneo: ");
+		System.out.print("Inserisci disciplina: ");
 		String nomeDisciplina = in.nextLine();
 		
 		in.close();
 		
-		Torneo t = new Torneo(numGironi, numPartecipanti/numGironi, nomeTorneo,nomeDisciplina);
+//		Torneo t = new Torneo(numGironi, numPartecipanti/numGironi, nomeTorneo,nomeDisciplina);
 		
 		
 		
@@ -53,7 +57,7 @@ public class Main {
 		
 		
 		// ordino in base al nome della squadra ??????? prob inutile
-		Collections.sort(tutti, new LexicographicComparator());
+		//Collections.sort(tutti, new LexicographicComparator());
 		
 		
 		// creo mappa che raggruppa per squadra

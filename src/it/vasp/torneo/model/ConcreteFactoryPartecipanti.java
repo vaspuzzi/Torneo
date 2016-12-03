@@ -1,3 +1,4 @@
+package it.vasp.torneo.model;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -48,6 +49,7 @@ public class ConcreteFactoryPartecipanti implements AbsFactoryPartecipanti {
 		p.setCognome(in.nextLine());
 		System.out.print("\nSquadra: ");
 		p.setSquadra(in.nextLine());
+		in.close();
 		
 		return p;
 	}
